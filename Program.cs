@@ -3,11 +3,11 @@ namespace LoopsAndRecursions
 {
     internal class Program
     {
-        static void Main()
+        public static void Main()
         {
-            int memberFibonacci5 = 5;
-            int memberFibonacci10 = 10;
-            int memberFibonacci20 = 20;
+            var memberFibonacci5 = 5;
+            var memberFibonacci10 = 10;
+            var memberFibonacci20 = 20;
 
             var fibonacci5 = new Fibonacci(memberFibonacci5);
             var fibonacci10 = new Fibonacci(memberFibonacci10);

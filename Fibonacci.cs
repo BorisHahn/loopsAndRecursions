@@ -3,20 +3,20 @@ namespace LoopsAndRecursions
 {
     internal class Fibonacci
     {
-        private int _member;
+        private int _fibonacciNumber;
         private int _count = 0;
-        internal Fibonacci(int member)
+        internal Fibonacci(int fibonacciNumber)
         {
-            _member = member;
+            _fibonacciNumber = fibonacciNumber;
         }
         public void FibonacciByLoop()
         {
             Stopwatch stopwatch = new();
-            int _fib1 = 1;
-            int _fib2 = 1;
+            var _fib1 = 1;
+            var _fib2 = 1;
             int _fibSum;
             stopwatch.Start();
-            while (_count < (_member - 2))
+            while (_count < (_fibonacciNumber - 2))
             {
                 _fibSum = _fib1 + _fib2;
                 _fib1 = _fib2;
@@ -24,18 +24,18 @@ namespace LoopsAndRecursions
                 _count++;
             }
             stopwatch.Stop();
-            Console.WriteLine($"Значение числа Фибоначчи для {_member} члена последовательности: {_fib2}");
-            Console.WriteLine($"Время затраченное на нахождение n-го члена последовательности {_member} циклом: ticks: {stopwatch.ElapsedTicks}, ms {stopwatch.ElapsedMilliseconds}");
+            Console.WriteLine($"Значение числа Фибоначчи для {_fibonacciNumber} члена последовательности: {_fib2}");
+            Console.WriteLine($"Время затраченное на нахождение n-го члена последовательности {_fibonacciNumber} циклом: ticks: {stopwatch.ElapsedTicks}, ms {stopwatch.ElapsedMilliseconds}");
         }
 
         public void FibonacciByRecursion()
         {
             Stopwatch stopwatch = new();
             stopwatch.Start();
-            CalculateFibonacciByRecursion(_member);
+            CalculateFibonacciByRecursion(_fibonacciNumber);
             stopwatch.Stop();
-            Console.WriteLine($"Значение числа Фибоначчи для {_member} члена последовательности: {CalculateFibonacciByRecursion(_member)}");
-            Console.WriteLine($"Время затраченное на нахождение n-го члена последовательности {_member} рекурсией: ticks: {stopwatch.ElapsedTicks}, ms {stopwatch.ElapsedMilliseconds}");
+            Console.WriteLine($"Значение числа Фибоначчи для {_fibonacciNumber} члена последовательности: {CalculateFibonacciByRecursion(_fibonacciNumber)}");
+            Console.WriteLine($"Время затраченное на нахождение n-го члена последовательности {_fibonacciNumber} рекурсией: ticks: {stopwatch.ElapsedTicks}, ms {stopwatch.ElapsedMilliseconds}");
         }
 
         private int CalculateFibonacciByRecursion(int count)
@@ -44,10 +44,7 @@ namespace LoopsAndRecursions
             {
                 return 1;
             }
-            else
-            {
-                return CalculateFibonacciByRecursion(count - 1) + CalculateFibonacciByRecursion(count - 2);
-            }
+            return CalculateFibonacciByRecursion(count - 1) + CalculateFibonacciByRecursion(count - 2);
         }
     }
 }
